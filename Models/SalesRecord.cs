@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalesWebMvc.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,19 +12,20 @@ namespace SalesWebMvc.Models
         public int ID { get; set; }
         public DateTime Date { get; set; }
         public double Amount { get; set; }
-        public double BaseSalary { get; set; }
+        public SaleStatus Status { get; set; }
         public Seller Seller { get; set; }
+
 
         public SalesRecord ( )
             {
             }
 
-        public SalesRecord ( int iD, DateTime date, double amount, double baseSalary, Seller seller )
+        public SalesRecord ( int iD, DateTime date, double amount, SaleStatus status, Seller seller )
             {
             ID = iD;
             Date = date;
             Amount = amount;
-            BaseSalary = baseSalary;
+            Status = status;
             Seller = seller;
             }
         }
